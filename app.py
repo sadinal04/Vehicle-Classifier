@@ -55,19 +55,19 @@ st.title("Klasifikasi Gambar: Cars, Planes, Trains")
 st.write("Silakan upload gambar atau klik tombol untuk mengambil gambar dari kamera dan diprediksi oleh model.")
 
 # Upload gambar atau ambil gambar dari kamera
-uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"], label_visibility="visible")
 
 # Menambahkan tombol untuk mengambil gambar
 take_picture_button = st.button("Ambil Gambar dengan Kamera")
 
-if take_picture_button:
-    camera_input = st.camera_input("Ambil gambar")
+image = None  # Inisialisasi variabel image di sini
 
-# Tentukan gambar yang akan digunakan
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-elif 'camera_input' in locals() and camera_input is not None:
-    image = Image.open(camera_input)
+elif take_picture_button:
+    camera_input = st.camera_input("Ambil gambar")
+    if camera_input is not None:
+        image = Image.open(camera_input)
 
 if image is not None:
     st.image(image, caption='Gambar yang diunggah/diambil', use_container_width=True)

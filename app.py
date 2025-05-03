@@ -7,6 +7,9 @@ import pandas as pd
 import os
 import gdown
 
+# Konfigurasi halaman Streamlit (Pindah ke bagian paling atas)
+st.set_page_config(page_title="Klasifikasi Gambar", layout="centered")
+
 # Path model
 model_path = 'model3.h5'
 
@@ -49,7 +52,6 @@ def preprocess_image(image):
     return img_array
 
 # Konfigurasi halaman Streamlit
-st.set_page_config(page_title="Klasifikasi Gambar", layout="centered")
 st.title("Klasifikasi Gambar: Cars, Planes, Trains")
 st.write("Silakan upload gambar untuk diprediksi oleh model.")
 

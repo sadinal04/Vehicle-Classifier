@@ -7,7 +7,7 @@ import pandas as pd
 import os
 import gdown
 
-# Konfigurasi halaman Streamlit (Pindah ke bagian paling atas)
+# Konfigurasi halaman Streamlit
 st.set_page_config(page_title="Klasifikasi Gambar", layout="centered")
 
 # Path model
@@ -62,12 +62,17 @@ take_picture_button = st.button("Ambil Gambar dengan Kamera")
 
 image = None  # Inisialisasi variabel image di sini
 
+# Proses upload gambar
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
+
+# Proses ambil gambar dari kamera
 elif take_picture_button:
     camera_input = st.camera_input("Ambil gambar")
-    if camera_input is not None:
+    if camera_input:
+        # Mengkonversi gambar dari input kamera menjadi Image
         image = Image.open(camera_input)
+        st.image(image, caption="Gambar yang diambil", use_container_width=True)
 
 if image is not None:
     st.image(image, caption='Gambar yang diunggah/diambil', use_container_width=True)

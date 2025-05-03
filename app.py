@@ -29,8 +29,9 @@ if not os.path.exists(output_path):
         st.error(f"Error saat mengunduh model: {e}")
         st.stop()
 
-# Load model
+# Load model dengan menangani error lebih lanjut
 try:
+    st.write("Mencoba memuat model...")
     model = load_model(output_path)
     st.write("Model berhasil dimuat.")
 except Exception as e:

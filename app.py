@@ -52,14 +52,20 @@ def preprocess_image(image):
 
 # Konfigurasi halaman Streamlit
 st.title("Klasifikasi Gambar: Cars, Planes, Trains")
-st.write("Silakan upload gambar untuk diprediksi oleh model.")
+st.write("Silakan upload gambar atau ambil gambar dari kamera untuk diprediksi oleh model.")
 
-# Upload gambar
+# Upload gambar atau ambil gambar dari kamera
 uploaded_file = st.file_uploader("Upload gambar", type=["jpg", "jpeg", "png"])
+camera_input = st.camera_input("Ambil gambar")
 
+# Tentukan gambar yang akan digunakan
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption='Gambar yang diunggah', use_container_width=True)
+elif camera_input is not None:
+    image = Image.open(camera_input)
+
+if image is not None:
+    st.image(image, caption='Gambar yang diunggah/diambil', use_container_width=True)
 
     if st.button("Prediksi"):
         with st.spinner("Memproses gambar..."):

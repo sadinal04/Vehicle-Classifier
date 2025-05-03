@@ -50,25 +50,6 @@ def preprocess_image(image):
     img_array = np.expand_dims(img_array, axis=0)  # Tambahkan dimensi batch
     return img_array
 
-# Menambahkan CSS untuk memperbesar area drop gambar
-st.markdown("""
-    <style>
-        .stFileUploader {
-            padding: 50px;
-            border: 2px dashed #1e88e5;
-            border-radius: 10px;
-            background-color: #f0f0f5;
-            font-size: 20px;
-            text-align: center;
-            color: #1e88e5;
-            transition: background-color 0.3s;
-        }
-        .stFileUploader:hover {
-            background-color: #e0e7ff;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 # Konfigurasi halaman Streamlit
 st.title("Klasifikasi Gambar: Cars, Planes, Trains")
 st.write("Silakan upload gambar atau klik tombol untuk mengambil gambar dari kamera dan diprediksi oleh model.")

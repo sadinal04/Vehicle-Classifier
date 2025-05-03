@@ -4,9 +4,19 @@ from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
 import pandas as pd
+import os
+import gdown
+
+# Path model
+model_path = 'model3.h5'
+
+# Cek apakah model sudah ada di lokal, jika tidak, download
+if not os.path.exists(model_path):
+    url = 'https://drive.google.com/uc?id=10R4hqfMd-QX3JahrGFat0Ts4XhBrnNkF'  # Ganti dengan ID file Google Drive
+    gdown.download(url, model_path, quiet=False)
 
 # Load model
-model = load_model('model3.h5')
+model = load_model(model_path)
 
 # Label kelas sesuai encoding
 class_labels = {

@@ -12,7 +12,7 @@ model_path = 'model3.h5'
 
 # Cek apakah model sudah ada di lokal, jika tidak, download
 if not os.path.exists(model_path):
-    url = 'https://drive.google.com/drive/folders/1QOtE3bVE97TPy2zWDbGE1FBVV1XWFJuG'
+    url = 'https://drive.google.com/uc?id=10R4hqfMd-QX3JahrGFat0Ts4XhBrnNkF'
     gdown.download(url, model_path, quiet=False)
 
 # Load model

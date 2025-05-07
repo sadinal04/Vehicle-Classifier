@@ -13,6 +13,8 @@ Proyek ini merupakan aplikasi klasifikasi gambar berbasis web yang dibuat menggu
 - Planes
 - Trains
 
+Link Dataset: https://www.kaggle.com/datasets/maciejgronczynski/vehicle-classification-dataset/data
+
 Model yang digunakan dilatih sebelumnya dan akan otomatis diunduh saat aplikasi dijalankan pertama kali.
 
 ## 🚀 Instruksi Penerapan

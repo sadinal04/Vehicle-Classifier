@@ -1,0 +1,14 @@
+Aulia Vika Rahman
+- Preprocessing Dataset dan bangun model 2
+
+Sadinal Mufti
+- Mencari Dataset dan deployment Model menggunakan Streamlit
+
+M. Nabil Maulana
+- Deployment pada Streamlit
+
+M. Habil Aswad
+- Merancang dan membangun model 1 & 3
+
+M. Ihsan Rizqullah Adfa
+- Mencari Dataset dan Preprocessing Dataset
